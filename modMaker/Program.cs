@@ -14,17 +14,17 @@ namespace modMaker
             var output3 = "assets:\r";
             foreach (var file in files)
             {
-                output += String.Format("- name: {0}\r method: copy\r  source:\r  - name: {0}\r", file.Remove(0,4)); //old version; no platform specificity.
+                output += String.Format("- name: {0}\r  method: copy\r  source:\r  - name: {0}\r", file.Remove(0,4)); //old version; no platform specificity.
             }
             File.WriteAllText("mod/OUTPUTmod.yml", output);
             foreach (var file in files_pc)
             {
-                output2 += String.Format("- name: {0}\r platform: pc\r method: copy\r  source:\r  - name: {0}\r", file.Remove(0, 4)); //platform: pc
+                output2 += String.Format("- name: {0}\r  platform: pc\r  method: copy\r  source:\r  - name: {0}\r", file.Remove(0, 7)); //platform: pc
             }
             File.WriteAllText("mod_pc/OUTPUTmod_PC.yml", output2);
             foreach (var file in files_ps2)
             {
-                output3 += String.Format("- name: {0}\r platform: ps2\r method: copy\r  source:\r  - name: {0}\r", file.Remove(0, 4)); //platform: ps2
+                output3 += String.Format("- name: {0}\r  platform: ps2\r  method: copy\r  source:\r  - name: {0}\r", file.Remove(0, 8)); //platform: ps2
             }
             File.WriteAllText("mod_ps2/OUTPUTmod_PS2.yml", output3);
             }
